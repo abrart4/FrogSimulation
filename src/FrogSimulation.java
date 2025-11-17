@@ -29,13 +29,13 @@ public class FrogSimulation {
     public boolean simulate() {
         int position = 0;
         for (int i = 0; i < maxHops; i ++) {
+            position += hopDistance();
             if (position >= goalDistance) {
                 return true;
             }
             if (position < 0) {
                 return false;
             }
-            position += hopDistance();
         }
 
         return false;
